@@ -6,7 +6,7 @@
 
 :root{
     --primary-color: rgb(78, 163, 248);
-    --secondary-color: #cfcfcf;
+    --secondary-color: #e3e3e3;
     --user-color: #f3f3ea;
     --icon-size: 1lh;
 }
@@ -178,6 +178,7 @@ h2, h3, h4{
 
 .card p, .news p{
     font-family: "Open Sans", sans-serif;
+    color: gray;
 }
 
 .news > div {
@@ -201,4 +202,31 @@ h2, h3, h4{
 
 .trending{
     grid-column: 2 / 3;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.trending > div{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: gray 1px 1px 5px;
+    margin-top: 10px;
+}
+
+.trending img{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.trending > div > div > p:first-of-type{
+    font-weight: 700;
+}
+
+
+.trending > div > div > p:last-of-type{
+    color: gray;
 }

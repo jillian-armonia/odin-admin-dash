@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: content-box;
 }
+
+:root{
+    --primary-color: rgb(78, 163, 248);
+    --secondary-color: #cfcfcf;
+    --user-color: #f3f3ea;
+    --icon-size: 1lh;
+}
 /********* FONTS ******/
 .nunito-sans {
     font-family: "Nunito Sans", sans-serif;
@@ -27,7 +34,7 @@
 /*************************/
 
 img{
-    height: 1.5lh;
+    height: var(--icon-size);
 }
 
 .container{
@@ -37,15 +44,18 @@ img{
     grid-template-rows: 1fr 5fr;
 }
 
+.side-title img{
+    height: calc(var(--icon-size) * 2);
+}
+
 .sidebar{
     grid-row: 1 / 3;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background-color: rgb(78, 163, 248);
+    background-color: var(--primary-color);
     color: white;
     padding: 5px;
-    margin-right: 10px;
 }
 
 .side-content, .side-title{
@@ -64,22 +74,74 @@ img{
 }
 
 .header{
-    height: 50%;
     display: grid;
+    box-shadow: gray 0 2px 5px;
 }
 
 .header-content{
     display: grid;
     grid-template-columns: 3fr 1fr;
+    padding: 10px;
 }
 
-.user, .pfp-icons{
+.user, .pfp-icons, .search{
     display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="search"]{
+    width: 30vw;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--secondary-color);
+    height: 1.5rem;
+}
+
+.pfp-icons img:last-of-type{
+    height: calc(var(--icon-size) * 2.5);
+    border-radius: 50%;
+}
+
+.user img{
+    height: calc(var(--icon-size) * 3.5);
+    border-radius: 50%;
+}
+
+.user p:first-of-type{
+    font-size: 0.7rem;
+}
+
+.user{
+    font-weight: 800;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttons button{
+    padding: 5px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
 }
 
 .main-content{
     display: grid;
     grid-template-columns: 3fr 1fr;
+    background-color: var(--secondary-color);
+    margin-top: 3px;
+}
+
+h2, h3{
+    font-family: "Nunito Sans", sans-serif;
 }
 
 .projects{
